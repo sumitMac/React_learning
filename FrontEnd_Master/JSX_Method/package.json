@@ -4,11 +4,13 @@
   "description": "Jsx method react app",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "sumit",
   "license": "ISC",
   "devDependencies": {
+    "eslint-config-prettier": "^9.0.0",
     "prettier": "^3.0.3"
   }
 }
