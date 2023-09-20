@@ -27,7 +27,7 @@ import SearchParams from "./SearchParams";
 //     React.createElement(Pet,{
 //         name:"lucky",
 //         age:9,
-//         breed:"huskey"
+//         breed:"husky"
 
 //     }),
 //     React.createElement(Pet,{
