@@ -4,9 +4,9 @@
   "description": "Jsx method react app",
   "main": "index.js",
   "scripts": {
-    "dev":"vite",
-    "build":"vite build",
-    "preview":"vite preview",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write \"src/**/*.{js,jsx}\"",
     "lint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -15,7 +15,11 @@
   "license": "ISC",
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.49.0",
     "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-react": "^7.33.2",
     "prettier": "^3.0.3",
     "vite": "^4.4.9"
   },
