@@ -7,10 +7,10 @@
       "prettier"
     ],
     "rules": {
-      "react/prop-types": 0,
+      "react/prop-types": 0,// avoid to take propsType
       "react/react-in-jsx-scope": 0
     },
-    "plugins": ["react", "import", "jsx-a11y"],
+    "plugins": ["react", "import", "jsx-a11y"],// use to find errors in react import and jsx
     "parserOptions": {
       "ecmaVersion": 2022,
       "sourceType": "module",

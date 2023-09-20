@@ -1,5 +1,4 @@
-import React from 'react';
-
+import React from "react";
 
 // const Pet = (props) => {
 //     return React.createElement("div", {}, [
@@ -8,14 +7,15 @@ import React from 'react';
 //       React.createElement("h3", {}, props.breed),
 //     ]);
 //   };
+//change into simple syntax.
 
-const Pet=(props)=>{
-    return(
-        <div>
-            <h1>{props.name}</h1>
-            <h2>{props.age}</h2>
-            <h3>{props.breed}</h3>
-        </div>
-    )
-}
+const Pet = (props) => {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <h2>{props.age}</h2>
+      <h3>{props.breed}</h3>
+    </div>
+  );
+};
 export default Pet;
