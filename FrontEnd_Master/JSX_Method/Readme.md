@@ -14,6 +14,8 @@ its define the state of component
 The hooks are pass to react and react give them back to you. 
 (1) useState
 use to update the sate of components.
+(2) useEffect
+useEffect allows you to say do a render of this component first so the user can see something then as soon as the render is done, then do something (the something here being an effect). 
  
 
 
