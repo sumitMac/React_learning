@@ -1,0 +1,4 @@
+//Every time  event happen is js it rerender every things from top to bottom.
+// when ever event is happening react remending its self.
+//Render function should  be fast and stateless(Means not modifiable and  write global things).
+// Do not create conditional creation of hooks because hooks are called in same order.

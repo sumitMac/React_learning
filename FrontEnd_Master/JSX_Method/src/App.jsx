@@ -1,6 +1,8 @@
 // import React from 'react';  Now no need to import react
-import { createRoot } from "react-dom";
-import Pet from "./Pet";
+import { createRoot } from "react-dom/client";// add client for client side rendering
+import SearchParams from "./SearchParams";
+// import Pet from "./Pet"; 
+
 
 // const Pet = (props) => {
 //     return React.createElement("div", {}, [
@@ -42,9 +44,11 @@ const App = () => {
   return (
     <div>
       <h1>Adopt Me</h1>
-      <Pet name="luna" age={3} breed="german" />
+      {/* <Pet name="luna" age={3} breed="german" />
       <Pet name="Puma" age={6} breed="libra" />
-      <Pet name="lucky" age={9} breed="cat" />
+      <Pet name="lucky" age={9} breed="cat" /> */}
+      <SearchParams/>
+
     </div>
   );
 };
