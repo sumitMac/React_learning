@@ -1,5 +1,7 @@
-import { useState,useEffect } from "react";
-import Pet from "./Pet";
+import { useState, useEffect } from "react";
+// import Pet from "./Pet";
+import useBreedList from "./useBreedList";
+import Results from "./Results";
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
@@ -9,24 +11,32 @@ const SearchParams = () => {
   const [animal, updateAnimal] = useState("");
   const [breed, setBreed] = useState("");
   const [pets, setPets] = useState([]);
-  const breeds = [];
+  // const breeds = [];
+  const [breeds] = useBreedList(animal);
 
   useEffect(() => {
+    // these going to rerender hte component every time when every we type so fixing these issue we use to add array of dependencies.
     requestPets();
-  }, []);
+    // added [] dependence to rerender only ones.
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function requestPets() {
     const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`
+      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
     );
     const json = await res.json();
-  
+
     setPets(json.pets);
   }
 
   return (
     <div className="search-params">
-      <form>
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          requestPets();
+        }}
+      >
         <label htmlFor="location">
           Location
           <input
@@ -51,6 +61,7 @@ const SearchParams = () => {
             }}
           >
             <option />
+
             {ANIMALS.map((animal) => (
               <option key={animal} value={animal}>
                 {animal}
@@ -77,11 +88,19 @@ const SearchParams = () => {
         </label>
         <button>Submit</button>
       </form>
-      {
+      {/* {
   pets.map((pet) => (
-    <Pet name={pet.name} animal={pet.animal} breed={pet.breed} key={pet.id} />
-  ))
-}
+    <Pet
+     name={pet.name}
+     animal={pet.animal} 
+     breed={pet.breed} 
+     key={pet.id}
+      />
+  )) passes as pets in Results
+  
+} */}
+
+      <Results pets={pets} />
     </div>
   );
 };

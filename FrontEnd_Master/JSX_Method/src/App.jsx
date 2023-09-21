@@ -6,7 +6,7 @@ import SearchParams from "./SearchParams";
 // const Pet = (props) => {
 //     return React.createElement("div", {}, [
 //       React.createElement("h1", {}, props.name),
-//       React.createElement("h2", {}, props.age),
+//       React.createElement("h2", {}, props.animal),
 //       React.createElement("h3", {}, props.breed),
 //     ]);
 //   };
@@ -19,19 +19,19 @@ import SearchParams from "./SearchParams";
 //    [ React.createElement("h1", {}, "hello welcome"),
 //     React.createElement(Pet,{
 //         name:"lucy",
-//         age:8,
+//         animal:8,
 //         breed:"german"
 
 //     }),
 //     React.createElement(Pet,{
 //         name:"lucky",
-//         age:9,
+//         animal:9,
 //         breed:"husky"
 
 //     }),
 //     React.createElement(Pet,{
 //         name:"sunflower",
-//         age:12,
+//         animal:12,
 //         breed:"street dog"
 
 //     }),]
@@ -43,9 +43,9 @@ const App = () => {
   return (
     <div>
       <h1>Adopt Me</h1>
-      {/* <Pet name="luna" age={3} breed="german" />
-      <Pet name="Puma" age={6} breed="libra" />
-      <Pet name="lucky" age={9} breed="cat" /> */}
+      {/* <Pet name="luna" animal={3} breed="german" />
+      <Pet name="Puma" animal={6} breed="libra" />
+      <Pet name="lucky" animal={9} breed="cat" /> */}
       <SearchParams />
     </div>
   );
