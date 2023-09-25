@@ -13,7 +13,7 @@ Note that this config only turns rules off, so it only makes sense using it toge
 # vite
 
 # State
-its define the state of component
+its define the state of component.
 
 # Hooks
 The hooks are pass to react and react give them back to you. 
