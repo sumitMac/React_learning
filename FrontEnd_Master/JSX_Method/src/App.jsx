@@ -46,7 +46,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: Infinity,
+      staleTime: Infinity,// means if you fetch something don't refetch it.
       cacheTime: Infinity,
     },
   },

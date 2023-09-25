@@ -40,9 +40,13 @@ for sever side rendering.
 # useParams
 The useParams hook is how you get params from React Router. It used to be through the props but now they prefer this API.
 
-# React query and TanStack 
+# React query and TanStack (https://tanstack.com/query/v4)
 TanStack Query (FKA React Query) is often described as the missing data-fetching library for web applications, but in more technical terms, it makes fetching, caching, synchronizing and updating server state in your web applications a breeze.
 
+# Mutations (https://tanstack.com/query/v4/docs/react/guides/mutations)
+useMutation (hook provided by TanStack Query).
+Mutation Side Effects=>
+useMutation comes with some helper options that allow quick and easy side-effects at any stage during the mutation lifecycle. These come in handy for both invalidating and refetching queries after mutations and even optimistic updates.
 
 
  
