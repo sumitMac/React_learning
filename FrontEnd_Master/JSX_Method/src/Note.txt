@@ -4,3 +4,8 @@
 // Do not create conditional creation of hooks because hooks are called in same order.
 //Key should be always unique identifier.
 // in this project location only basically searching text i.e.
+//The hooks are pass to react and react give them back to you. 
+//StrictMode come from react.(One thing that StrictMode does with React 18 is run twice the initialization functions of your apps to check to see if they are indeed truly stateless. While in theory this is a good thing to assure, it's wasteful to ongoing continually do as it will double invoke your APIs).
+//props are read only while state are mutable because props are properties that pass from parents.
+//The useParams hook is how you get params from React Router. It used to be through the props but now they prefer this API.
+//@tanstack/react-query is the same people who do react-query. This is just the newer version. They now support more than just React.

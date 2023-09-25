@@ -1,6 +1,10 @@
 // import React from 'react';  Now no need to import react
 import { createRoot } from "react-dom/client"; // add client for client side rendering
 import SearchParams from "./SearchParams";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import Details from "./Details";
+import {QueryClient, QueryClientProvider} from "@tanstack/react-query";
+// import { StrictMode } from "react";
 // import Pet from "./Pet";
 
 // const Pet = (props) => {
@@ -39,15 +43,38 @@ import SearchParams from "./SearchParams";
 // };
 // change into simple syntax
 
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: Infinity,
+      cacheTime: Infinity,
+    },
+  },
+});
+
 const App = () => {
   return (
-    <div>
-      <h1>Adopt Me</h1>
+    // <StrictMode>
+    <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      {/* what route in BrowserRouter is available to use. */}
+      {/* <div> */}
+      {/* <h1>Adopt Me!</h1> replace to ...header */}
+      <header>
+  <Link to="/">Adopt Me!</Link>
+</header>
       {/* <Pet name="luna" animal={3} breed="german" />
       <Pet name="Puma" animal={6} breed="libra" />
       <Pet name="lucky" animal={9} breed="cat" /> */}
-      <SearchParams />
-    </div>
+      {/* <SearchParams /> */}
+      <Routes>
+        <Route path="/details/:id" element={<Details />} />
+        <Route path="/" element={<SearchParams />} />
+      </Routes>
+      {/* </div> */}
+      </QueryClientProvider>
+    </BrowserRouter>
+    //</StrictMode>
   );
 };
 const container = document.getElementById("root");
