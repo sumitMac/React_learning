@@ -9,3 +9,5 @@
 //props are read only while state are mutable because props are properties that pass from parents.
 //The useParams hook is how you get params from React Router. It used to be through the props but now they prefer this API.
 //@tanstack/react-query is the same people who do react-query. This is just the newer version. They now support more than just React.
+//queryKey 
+Query Keys are a very important core concept in React Query. They are necessary so that the library can internally cache your data correctly and refetch automatically when a dependency to your query changes. Lastly, it will allow you to interact with the Query Cache manually when needed, for example, when updating data after a mutation or when you need to manually invalidate some queries.

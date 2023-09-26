@@ -48,6 +48,9 @@ useMutation (hook provided by TanStack Query).
 Mutation Side Effects=>
 useMutation comes with some helper options that allow quick and easy side-effects at any stage during the mutation lifecycle. These come in handy for both invalidating and refetching queries after mutations and even optimistic updates.
 
+# React Query (simple docs)
+https://tkdodo.eu/blog/effective-react-query-keys
+
 
  
 

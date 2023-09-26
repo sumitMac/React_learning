@@ -5,7 +5,6 @@ import Results from "./Results";
 import { useQuery } from "@tanstack/react-query";
 import fetchSearch from "./fetchSearch";
 
-
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
@@ -15,11 +14,10 @@ const SearchParams = () => {
     breed: "",
   });
 
-  
   // const location = "Seattle, WA";
   // const [location, setLocation] = useState("");
   const [animal, updateAnimal] = useState("");
-  const [breed, setBreed] = useState("");
+  // const [breed, setBreed] = useState("");
   // const [pets, setPets] = useState([]);
   // const breeds = [];
   const [breeds] = useBreedList(animal);
@@ -49,12 +47,12 @@ const SearchParams = () => {
           e.preventDefault();
           // requestPets();
           const formData = new FormData(e.target);
-const obj = {
-  animal: formData.get("animal") ?? "",
-  breed: formData.get("breed") ?? "",
-  location: formData.get("location") ?? "",
-};
-setRequestParams(obj);
+          const obj = {
+            animal: formData.get("animal") ?? "",
+            breed: formData.get("breed") ?? "",
+            location: formData.get("location") ?? "",
+          };
+          setRequestParams(obj);
         }}
       >
         <label htmlFor="location">
@@ -96,9 +94,9 @@ setRequestParams(obj);
           <select
             disabled={!breeds.length}
             id="breed"
-            value={breed}
-            onChange={(e) => setBreed(e.target.value)}
-            onBlur={(e) => setBreed(e.target.value)}
+            name={"breed"}
+            // onChange={(e) => setBreed(e.target.value)}
+            // onBlur={(e) => setBreed(e.target.value)}
           >
             <option />
             {breeds.map((breed) => (
