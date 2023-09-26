@@ -1,49 +1,70 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 // import Pet from "./Pet";
 import useBreedList from "./useBreedList";
 import Results from "./Results";
+import { useQuery } from "@tanstack/react-query";
+import fetchSearch from "./fetchSearch";
+
 
 const ANIMALS = ["bird", "cat", "dog", "rabbit", "reptile"];
 
 const SearchParams = () => {
+  const [requestParams, setRequestParams] = useState({
+    location: "",
+    animal: "",
+    breed: "",
+  });
+
+  
   // const location = "Seattle, WA";
-  const [location, setLocation] = useState("");
+  // const [location, setLocation] = useState("");
   const [animal, updateAnimal] = useState("");
   const [breed, setBreed] = useState("");
-  const [pets, setPets] = useState([]);
+  // const [pets, setPets] = useState([]);
   // const breeds = [];
   const [breeds] = useBreedList(animal);
 
-  useEffect(() => {
-    // these going to rerender hte component every time when every we type so fixing these issue we use to add array of dependencies.
-    requestPets();
-    // added [] dependence to rerender only ones.
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
+  const results = useQuery(["search", requestParams], fetchSearch);
+  const pets = results?.data?.pets ?? [];
 
-  async function requestPets() {
-    const res = await fetch(
-      `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
-    );
-    const json = await res.json();
+  // useEffect(() => {
+  //   // these going to rerender hte component every time when every we type so fixing these issue we use to add array of dependencies.
+  //   requestPets();
+  //   // added [] dependence to rerender only ones.
+  // }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-    setPets(json.pets);
-  }
+  // async function requestPets() {
+  //   const res = await fetch(
+  //     `http://pets-v2.dev-apis.com/pets?animal=${animal}&location=${location}&breed=${breed}`,
+  //   );
+  //   const json = await res.json();
+
+  //   setPets(json.pets);
+  // }
 
   return (
     <div className="search-params">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          requestPets();
+          // requestPets();
+          const formData = new FormData(e.target);
+const obj = {
+  animal: formData.get("animal") ?? "",
+  breed: formData.get("breed") ?? "",
+  location: formData.get("location") ?? "",
+};
+setRequestParams(obj);
         }}
       >
         <label htmlFor="location">
           Location
           <input
             id="location"
-            value={location}
+            name="location"
+            // value={location} give localhost port location number
             placeholder="Enter Location"
-            onChange={(e) => setLocation(e.target.value)}
+            // onChange={(e) => setLocation(e.target.value)}
           />
         </label>
         <label htmlFor="animal">
@@ -51,13 +72,14 @@ const SearchParams = () => {
           <select
             id="animal"
             value={animal}
+            name="animal"
             onChange={(e) => {
               updateAnimal(e.target.value);
-              updateBreed("");
+              // updateBreed("");
             }}
             onBlur={(e) => {
               updateAnimal(e.target.value);
-              updateBreed("");
+              // updateBreed("");
             }}
           >
             <option />
