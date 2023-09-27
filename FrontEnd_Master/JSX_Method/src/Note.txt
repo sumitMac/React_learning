@@ -45,3 +45,18 @@ componentDidMount is a function that's called after the first rendering is compl
 componentDidUpdate is called after your state is updated. If you're doing something like Typeahead where you're making reactive requests to an API based on user input, this would be an ideal place to do it.
 componentWillUnmount is typically a place for cleanup. Let's say you had to write a component to integrate with jQuery (I've had to write this, multiple times), this is where you'd clean up those references (like unattaching from DOM nodes and deleting them) so you don't leak memory. This method is invoked whenever a component is about to be destroyed.
 This class doesn't cover all the lifecycle methods but you can imagine having different timings for different capabilities of a component can be useful. For example, if you have a set of props that come in and you need to filter those props before you display them, you can use (getDerivedStateFromProps). Or if you need to react to your component being removed from the DOM (like if you're subscribing to an API and you need to dispose of the subscription) you can use componentWillUnmount.
+
+Error boundaries Only Handle by componentDidCatch to handle. Frequently there's errors with APIs with malformatted or otherwise weird data. Let's be defensive about this because we still want to use this API but we can't control when we get errors. We're going to use a feature called componentDidCatch to handle this. This is something you can't do with hooks so if you needed this sort of functionality you'd have to use a class component.
+
+This will also catch 404s on our API if someone give it an invalid ID!
+
+A component can only catch errors in its children, so that's important to keep in mind. It cannot catch its own errors.
+
+A static method is one that can be called on the constructor
+
+//library for error boundaries handle
+
+If you want to call an error logging service, componentDidCatch would be an amazing place to do that. I can recommend Sentry(https://sentry.io/welcome/) and TrackJS(https://trackjs.com/).
+
+//"Don't repeat yourself" (DRY) is a principle of software development aimed at reducing repetition of information which is likely to change, replacing it with abstractions that are less likely to change, or using data normalization which avoids redundancy in the first place.
+Write Everything Twice (or I even prefer Write Everything Thrice). In this case, we have one use case for this component, so I won't spend the extra time to make it flexible. If I used it again, I'd make it work for both of those use cases, but not every use case. On the third or fourth time, I'd then go back and invest the time to make it flexible.
