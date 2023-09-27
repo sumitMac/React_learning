@@ -53,6 +53,8 @@ https://tkdodo.eu/blog/effective-react-query-keys
 
 # React Class Components (https://legacy.reactjs.org/docs/react-component.html)
 
+# Error boundaries
+
 
  
 
