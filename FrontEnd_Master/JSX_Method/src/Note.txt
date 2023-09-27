@@ -60,3 +60,11 @@ If you want to call an error logging service, componentDidCatch would be an amaz
 
 //"Don't repeat yourself" (DRY) is a principle of software development aimed at reducing repetition of information which is likely to change, replacing it with abstractions that are less likely to change, or using data normalization which avoids redundancy in the first place.
 Write Everything Twice (or I even prefer Write Everything Thrice). In this case, we have one use case for this component, so I won't spend the extra time to make it flexible. If I used it again, I'd make it work for both of those use cases, but not every use case. On the third or fourth time, I'd then go back and invest the time to make it flexible.
+
+//Portal
+
+Another nice feature React is something called a Portal. You can think of the portal as a separate mount point (the actual DOM node which your app is put into) for your React app. A common use case for this is going to be doing modals. You'll have your normal app with its normal mount point and then you can also put different content into a separate mount point (like a modal or a contextual nav bar) directly from a component. Pretty cool!
+
+//useRef
+
+Refs are like instance variables for function components. Whereas on a class you'd say this.myVar to refer to an instance variable, with function components you can use refs. They're containers of state that live outside a function's closure state which means anytime I refer to elRef.current, it's always referring to the same element. This is different from a useState call because the variable returned from that useState call will always refer to the state of the variable when that function was called. It seems like a weird hair to split but it's important when you have async calls and effects because that variable can change and nearly always you want the useState variable, but with something like a portal it's important we always refer to the same DOM div; we don't want a lot of portals.
