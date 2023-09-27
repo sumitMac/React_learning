@@ -51,6 +51,8 @@ useMutation comes with some helper options that allow quick and easy side-effect
 # React Query (simple docs)
 https://tkdodo.eu/blog/effective-react-query-keys
 
+# React Class Components (https://legacy.reactjs.org/docs/react-component.html)
+
 
  
 

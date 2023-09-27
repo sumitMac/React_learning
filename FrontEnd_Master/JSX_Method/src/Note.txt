@@ -1,13 +1,47 @@
 //Every time  event happen is js it rerender every things from top to bottom.
+
 // when ever event is happening react remending its self.
+
 //Render function should  be fast and stateless(Means not modifiable and  write global things).
+
 // Do not create conditional creation of hooks because hooks are called in same order.
+
 //Key should be always unique identifier.
+
 // in this project location only basically searching text i.e.
+
 //The hooks are pass to react and react give them back to you. 
+
 //StrictMode come from react.(One thing that StrictMode does with React 18 is run twice the initialization functions of your apps to check to see if they are indeed truly stateless. While in theory this is a good thing to assure, it's wasteful to ongoing continually do as it will double invoke your APIs).
+
 //props are read only while state are mutable because props are properties that pass from parents.
-//The useParams hook is how you get params from React Router. It used to be through the props but now they prefer this API.
-//@tanstack/react-query is the same people who do react-query. This is just the newer version. They now support more than just React.
+
+//The useParams
+
+ hook is how you get params from React Router. It used to be through the props but now they prefer this API.
+
+//@tanstack/react-query
+
+ is the same people who do react-query. This is just the newer version. They now support more than just React.
+
 //queryKey 
+
 Query Keys are a very important core concept in React Query. They are necessary so that the library can internally cache your data correctly and refetch automatically when a dependency to your query changes. Lastly, it will allow you to interact with the Query Cache manually when needed, for example, when updating data after a mutation or when you need to manually invalidate some queries.
+
+//In (Class Component) 
+
+Notice instead of getting props via parameters and state via useState we're getting it from the instance variables this.state and this.props. This is how it works with class components. Neither one will you mutate directly.
+this.state is the mutable state of the component (like useState). You'll use this.setState to mutate it (don't modify it directly.)
+this.props comes from the parent component, similar to parameter given to the render functions that we pull props out of.
+
+We also set defaultProps in the case that someone uses this component without providing it with props. This allows us to always assume that the photos prop is going to be an array instead of having to do a bunch of "if this thing exists" logic.
+
+//Lifecycle methods
+
+Class components have lifecycle methods. These for the most part are what useEffect does for function components. They're for doing things like making API calls, starting and ending transitions/animations, debugging, and other things like that. We don't need to use any here, but let's look at a few of the most common ones
+
+constructor isn't necessarily a React lifecylce method but we use it like one. It's where you do things that need to happen before the first render. Generally it's where you set the initial state.
+componentDidMount is a function that's called after the first rendering is completed. This pretty similar to a useEffect call that only calls the first time. This is typically where you want to do data fetching. It doesn't have to be async; we just made it async here to make the data fetching easy.
+componentDidUpdate is called after your state is updated. If you're doing something like Typeahead where you're making reactive requests to an API based on user input, this would be an ideal place to do it.
+componentWillUnmount is typically a place for cleanup. Let's say you had to write a component to integrate with jQuery (I've had to write this, multiple times), this is where you'd clean up those references (like unattaching from DOM nodes and deleting them) so you don't leak memory. This method is invoked whenever a component is about to be destroyed.
+This class doesn't cover all the lifecycle methods but you can imagine having different timings for different capabilities of a component can be useful. For example, if you have a set of props that come in and you need to filter those props before you display them, you can use (getDerivedStateFromProps). Or if you need to react to your component being removed from the DOM (like if you're subscribing to an API and you need to dispose of the subscription) you can use componentWillUnmount.
