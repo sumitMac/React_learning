@@ -68,3 +68,7 @@ Another nice feature React is something called a Portal. You can think of the po
 //useRef
 
 Refs are like instance variables for function components. Whereas on a class you'd say this.myVar to refer to an instance variable, with function components you can use refs. They're containers of state that live outside a function's closure state which means anytime I refer to elRef.current, it's always referring to the same element. This is different from a useState call because the variable returned from that useState call will always refer to the state of the variable when that function was called. It seems like a weird hair to split but it's important when you have async calls and effects because that variable can change and nearly always you want the useState variable, but with something like a portal it's important we always refer to the same DOM div; we don't want a lot of portals.
+
+//createPortal(https://react.dev/reference/react-dom/createPortal)
+
+createPortal lets you render some children into a different part of the DOM.
