@@ -1,0 +1,43 @@
+Introduction
+useRef
+useReducer
+useMemo
+useCallback
+useLayoutEffect & useID
+Additional Hooks
+AdoptMe Project Setup
+Installing Tailwind CSS
+Styling with Tailwind CSS
+Adding a Tailwind CSS Form Plugin
+Extending Tailwind CSS
+Layout with Tailwind CSS
+Code Splitting
+Server Side Rendering
+Node Streams with Express
+Server-Side Fetching
+useDeferredValue
+useTransition
+Setup TypeScript
+Typing Modal Component
+Setup TypeScript ESLint
+Typing an API Response
+Typing Details & Context Components
+Typing Carousel Component
+Typing Pet Component & Error Boundary
+Typing Component with React Query
+Typing Component with a Form
+Setup Redux Toolkit
+Creating a Slice
+Wiring Redux to Components
+Adding Search Params to Redux
+Redux Toolkit Query & Middleware
+Redux Dev Tools
+Setup React Testing Library & Vitetest
+Testing a Component
+Testing User Interaction
+Testing Custom Hooks
+Testing Mocks
+Snapshots
+Testing Coverage
+Vitest VSCode Extension
+Wrapping Up
