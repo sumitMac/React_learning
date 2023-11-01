@@ -43,5 +43,5 @@ export function useBoard() {
     setXIsNext((xIsNext) => !xIsNext);
   };
 
-  return [sq, handleClick, status, winner,setSq];
+  return [sq, handleClick, status, winner, setSq];
 }

@@ -1,5 +1,4 @@
-
-function Square({value, onSquareClick}) {
+function Square({ value, onSquareClick }) {
   return (
     <div className="square-container">
       <button onClick={onSquareClick} className="square">

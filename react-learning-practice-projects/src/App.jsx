@@ -1,4 +1,3 @@
-
 import Board from "./components/tic-toc-components/Board";
 
 function App() {
