@@ -10,6 +10,8 @@ function App() {
     <>
       <TodoList />
       {/* {value} */}
+      {/* checking getting value from costume Hook */}
+    
     </>
   );
 }
