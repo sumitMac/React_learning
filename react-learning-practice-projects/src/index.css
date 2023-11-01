@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  z-index: 0;
+  background-image: url("https://cdn.pixabay.com/photo/2018/03/17/19/36/connection-3234929_1280.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  z-index: 1;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  opacity: 0.8;
+  cursor: pointer;
+  padding: 0;
+  outline-offset: 4px;
+  box-shadow: red 100px 100px 100px;
+}
+.font {
+  font-weight: 600;
+  color: black;
+  display: block;
+  font-size: 4.25rem;
+  transform: translateY(-6px);
+}
+.square:active .font {
+  transform: translateY(-2px);
+}
+.btn-reset {
+  background-color: white;
+  color: red;
+  width: 300px;
+  height: 30px;
+  font-weight: 700;
+  word-spacing: 100px;
+  border: 5px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.status {
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(153, 253, 4);
+  word-spacing: 10px;
+}
+.square-container {
+  border-bottom: 10px solid rgb(153, 253, 4);
+  border-right: 10px solid rgb(153, 253, 4);
+}
+.square-container:nth-child(3n) {
+  border-right: none;
+}
+.square-container:last-child {
+  border-bottom: none;
+}
+.square-container:nth-child(7n) {
+  border-bottom: none;
+}
+.square-container:nth-child(8n) {
+  border-bottom: none;
+}
